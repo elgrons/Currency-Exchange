@@ -25,3 +25,14 @@ function printElements(conversion_rates) {
 function printError() {
   document.querySelector('#showCashConversion').innerText = `There was an error processing your exchange rate.`;
 }
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const moola = document.querySelector('#number-input').value;
+  document.querySelector('#number-input').value = null;
+  cashChange(moola);
+}
+
+window.addEventListener("load",function() {
+  document.querySelector('form').addEventListener("submit", handleFormSubmission);
+});

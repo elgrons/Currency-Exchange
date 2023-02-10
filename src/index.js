@@ -11,7 +11,7 @@ function cashChange(target_code, amount) {
       if(response.conversion_result) {
         printElements(response);
       } else {
-        printError();
+        printError(response);
       }
     });
 }
@@ -22,8 +22,8 @@ function printElements(response) {
   document.querySelector('#showCashConversion').innerText = `The total converted to ${response.target_code} is $${response.conversion_result}.`;
 }
 
-function printError(response) {
-  document.querySelector('#showCashConversion').innerText = `There was an error processing your exchange rate. ${response.result}`;
+function printError(error) {
+  document.querySelector('#showError').innerText = `There was an error processing your monetary conversion. ${error}`;
 }
 
 function handleFormSubmission(event) {

@@ -22,8 +22,8 @@ function printElements(response) {
   document.querySelector('#showCashConversion').innerText = `The total converted to ${response.target_code} is $${response.conversion_result}.`;
 }
 
-function printError(error) {
-  document.querySelector('#showError').innerText = `There was an error processing your monetary conversion. ${error}`;
+function printError(response) {
+  document.querySelector('#showError').innerText = `There was an error processing your monetary conversion. ${response.error-type}`;
 }
 
 function handleFormSubmission(event) {

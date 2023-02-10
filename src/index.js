@@ -6,10 +6,10 @@ import MoneyExchangeService from './js/MoneyExchangeService.js';
 //Business Logic
 
 function cashChange(target_code, amount) {
-  let promise = MoneyExchangeService.cashChange(target_code, amount);
-  promise.then(function(response) {
+  MoneyExchangeService.cashChange(target_code, amount);
+  .then(function(response) {
     if(response.conversion_result) {
-      printElements(target_code, amount);
+      printElements(response);
     } else {
       printError();
     }
@@ -18,8 +18,9 @@ function cashChange(target_code, amount) {
 
 //User Interface Logic
 
-function printElements(response, target_code, amount) {
+function printElements(response) {
   document.querySelector('#showCashConversion').innerText = `The total of $${amount} converted to ${target_code} is $${response.conversion_result}.`;
+  console.log(response);
 }
 
 function printError(response) {
@@ -28,9 +29,10 @@ function printError(response) {
 
 function handleFormSubmission(event) {
   event.preventDefault();
+  const altCode = document.getElementById('code-input').value;
   const moola = document.querySelector('#number-input').value;
-  const altCode = document.querySelector('#code-input').value;
-  document.querySelector('#number-input').value = null;
+  // document.querySelector('#number-input').value = null;
+  // document.getElementById('code-input').value = null;
   cashChange(altCode, moola);
 }
 

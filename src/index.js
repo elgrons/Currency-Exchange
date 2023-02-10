@@ -1,6 +1,27 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Triangle from './js/triangle.js';
-import Rectangle from './js/rectangle.js';
+import MoneyExchangeService from './js/MoneyExchangeService.js';
 
+//Business Logic
+
+function cashChange(amount) {
+  let promise = MoneyExchangeService.cashChange(amount);
+  promise.then(function(response) {
+    if(response.conversion_rates) {
+      printElements(response);
+    } else {
+      printError();
+    }
+  });
+}
+
+//User Interface Logic
+
+function printElements(conversion_rates) {
+  document.querySelector('#showCashConversion').innerText = `The total converted amount is $ ${conversion_rates}.`;
+}
+
+function printError() {
+  document.querySelector('#showCashConversion').innerText = `There was an error processing your exchange rate.`;
+}

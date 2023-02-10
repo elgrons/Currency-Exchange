@@ -6,7 +6,7 @@
   <h1>💰Currency Exchanger💰</h1>
   <form id="money-exchange-form">
     <label for="number-input">Enter an amount in $USD:</label>
-    <input id="number-input" type="number"><br>
+    <input id="number-input" type="number" placeholder="0.00" required name="price" min="0" value="0" step="0.01"><br>
     <select id="currency-input">
       <option value="EUR">Euro</option>
       <option value="CAD">Canadian Dollar</option>
@@ -17,6 +17,7 @@
     </select><br>
     <button type="submit" id="money-button">$ Convert Cash $ :</button>
   </form>
+  <p id="showCashConversion"></p>
   <img src="/Users/eliotgronstal/Desktop/Epicodus/currency-exchange/src/assets/images/Money-Euro-USD.jpg" alt="Stack of Different Types of Currencies">
 </body>
 </html>

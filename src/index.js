@@ -1,23 +1,19 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-// import MoneyExchangeService from './js/MoneyExchangeService.js';
+import MoneyExchangeService from './js/MoneyExchangeService';
 
 //Business Logic
 
 function cashChange(target_code, amount) {
-  let request = new XMLHttpRequest();
-  const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${target_code}/${amount}`;
-  request.addEventListener("loadend", function() {
-    const response = JSON.parse(this.responseText);
-    if (this.status === 200) {
-      printElements(response);
-    } else if (this.status === 404) {
-      printError();
-    }
-  });
-  request.open("GET", url, true);
-  request.send();
+  MoneyExchangeService.cashChange(target_code, amount)
+    .then(function(response) {
+      if(response.conversion_result) {
+        printElements(response);
+      } else {
+        printError();
+      }
+    });
 }
 
 //User Interface Logic

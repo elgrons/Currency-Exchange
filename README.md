@@ -34,7 +34,7 @@ If the API call results in an error (any message not a 200 OK), the application 
 * 💸 Include API_KEY={your API key} in the text of the .env file at the top level of your directory and keep spelling and capitlization identical.
 * 💸 Navigate to the root folder of this downloaded repo in your terminal.
 * 💸 Run npm install.
-* 💸 Run npm run start to open the pgae in your default browser.
+* 💸 Run npm run start to open the page in your default browser.
 
 * 💸 Worth noting for non-Mac users: in the package.json "scripts" for lint: line 9's has an extra " ' " surrounding src:... which allows es lint to access files recursively  "lint": "'eslint src/*.js'",
 

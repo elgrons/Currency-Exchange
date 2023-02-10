@@ -6,11 +6,10 @@ import MoneyExchangeService from './js/MoneyExchangeService.js';
 //Business Logic
 
 function cashChange(target_code, amount) {
-  let promise = MoneyExchangeService.cashChange(amount);
+  let promise = MoneyExchangeService.cashChange(target_code, amount);
   promise.then(function(response) {
     if(response.conversion_result) {
-      console.log(conversion_result);
-      printElements(response);
+      printElements(target_code, amount);
     } else {
       printError();
     }
@@ -19,21 +18,22 @@ function cashChange(target_code, amount) {
 
 //User Interface Logic
 
-function printElements(conversion_result) {
-  document.querySelector('#showCashConversion').innerText = `The total converted amount is $ ${conversion_result}.`;
+function printElements(response, target_code, amount) {
+  document.querySelector('#showCashConversion').innerText = `The total of $${amount} converted to ${target_code} is $${response.conversion_result}.`;
 }
 
-function printError() {
-  document.querySelector('#showCashConversion').innerText = `There was an error processing your exchange rate.`;
+function printError(response) {
+  document.querySelector('#showCashConversion').innerText = `There was an error processing your exchange rate. ${response.result}`;
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const moola = document.querySelector('#number-input').value;
+  const altCode = document.querySelector('#code-input').value;
   document.querySelector('#number-input').value = null;
-  cashChange(moola);
+  cashChange(altCode, moola);
 }
 
 window.addEventListener("load",function() {
-  document.querySelector('form').addEventListener("submit", handleFormSubmission);
+  document.querySelector('#money-exchange-form').addEventListener("submit", handleFormSubmission);
 });

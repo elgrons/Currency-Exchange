@@ -5,10 +5,11 @@ import MoneyExchangeService from './js/MoneyExchangeService.js';
 
 //Business Logic
 
-function cashChange(amount) {
+function cashChange(target_code, amount) {
   let promise = MoneyExchangeService.cashChange(amount);
   promise.then(function(response) {
     if(response.conversion_result) {
+      console.log(conversion_result);
       printElements(response);
     } else {
       printError();

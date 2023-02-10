@@ -8,7 +8,7 @@ import MoneyExchangeService from './js/MoneyExchangeService.js';
 function cashChange(amount) {
   let promise = MoneyExchangeService.cashChange(amount);
   promise.then(function(response) {
-    if(response.conversion_rates) {
+    if(response.conversion_result) {
       printElements(response);
     } else {
       printError();
@@ -18,8 +18,8 @@ function cashChange(amount) {
 
 //User Interface Logic
 
-function printElements(conversion_rates) {
-  document.querySelector('#showCashConversion').innerText = `The total converted amount is $ ${conversion_rates}.`;
+function printElements(conversion_result) {
+  document.querySelector('#showCashConversion').innerText = `The total converted amount is $ ${conversion_result}.`;
 }
 
 function printError() {

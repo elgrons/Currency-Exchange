@@ -10,9 +10,6 @@ function cashChange(target_code, amount) {
     .then(function(response) {
       if(response.conversion_result) {
         printElements(response);
-      } else if (amount === 0.00) {
-        printAmountError(response);
-        console.log(printAmountError);
       } else {
         printError(response);
         console.log(printError);
@@ -24,15 +21,11 @@ function cashChange(target_code, amount) {
 
 function printElements(response) {
   document.querySelector('#showCashConversion').innerText = `The total converted to ${response.target_code} is $${response.conversion_result}.`;
+  document.querySelector('#showError').innerText = null;
 }
 
 function printError(response) {
   document.querySelector('#showError').innerText = `${response.result} ${response["error-type"]} ERROR: Please enter numbers other than zero in the supported currency types.`;
-  // document.querySelector('#showError').innerText = null;
-}
-
-function printAmountError(response) {
-  document.querySelector('#showError').innerText = `Please enter numbers only. ${response.result} ${response["error-type"]}`;
 }
 
 function handleFormSubmission(event) {

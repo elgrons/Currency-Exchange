@@ -1,5 +1,9 @@
 body {
   background-color: greenyellow;
+  text-align: center;
+  font-family:'Franklin Gothic Medium';
+  font-variant:small-caps;
+  margin: 5%;
 }
 
 .hidden {
@@ -10,4 +14,17 @@ img {
   width: 88%;
   display: block;
   margin: auto;
+  border-color: darkgreen;
+  border-style: groove;
+  box-shadow: 25px 30px salmon;
+}
+
+.money-button {
+  font-family:'Franklin Gothic Medium';
+  font-variant:small-caps;
+}
+
+.showError {
+  font-size: 45px;
+  color: red;
 }

@@ -30,10 +30,14 @@ function handleFormSubmission(event) {
   event.preventDefault();
   const target_code = document.getElementById('code-input').value;
   const amount = document.querySelector('#number-input').value;
-  document.querySelector('#number-input').value = null;
-  cashChange(target_code, amount);
+  if (!target_code) {
+    document.getElementById("badMoney").removeAttribute("class");
+  } else {
+    document.querySelector('#number-input').value = null;
+    document.getElementById("badMoney").setAttribute("class", "hidden");
+    cashChange(target_code, amount);
+  }
 }
-
 
 window.addEventListener("load",function() {
   document.querySelector('#money-exchange-form').addEventListener("submit", handleFormSubmission);

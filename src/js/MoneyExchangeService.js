@@ -4,13 +4,14 @@ export default class MoneyExchangeService {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${target_code}/${amount}`)
       .then(function(response) {
         if (!response.ok) {
-          const errorMessage = `${response.result} ${response["error-type"]}`;
+          const errorMessage = `${response} ${response["error-type"]}`;
           throw new Error(errorMessage);
         } else {
           return response.json();
         }
       })
       .catch(function(error) {
+        console.log(error);
         return error;
       });
   }

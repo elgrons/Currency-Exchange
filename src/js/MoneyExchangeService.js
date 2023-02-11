@@ -4,7 +4,7 @@ export default class MoneyExchangeService {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${target_code}/${amount}`)
       .then(function(response) {
         if (!response.ok) {
-          const errorMessage = `There was an error processing your monetary conversion. ${response.error-type}`;
+          const errorMessage = `${response.status} ${response.statusText}`;
           throw new Error(errorMessage);
         } else {
           return response.json();

@@ -22,8 +22,8 @@ function printElements(response) {
   document.querySelector('#showCashConversion').innerText = `The total converted to ${response.target_code} is $${response.conversion_result}.`;
 }
 
-function printError(response) {
-  document.querySelector('#showError').innerText = `There was an error processing your monetary conversion. ${response.error-type}`;
+function printError(error) {
+  document.querySelector('#showError').innerText = `ERROR: Please enter a real number and a supported type of currency.${error}`;
 }
 
 function handleFormSubmission(event) {
@@ -33,6 +33,7 @@ function handleFormSubmission(event) {
   document.querySelector('#number-input').value = null;
   cashChange(target_code, amount);
 }
+
 
 window.addEventListener("load",function() {
   document.querySelector('#money-exchange-form').addEventListener("submit", handleFormSubmission);

@@ -40,7 +40,8 @@ If the API call results in an error (any message not a 200 OK), the application 
 
 ## Known Bugs 💵 💴 💶 💷
 
-* _Any known issues_
+* 💸 Error message shows without specific error code.
+
 * 💸 Please reach out to Eliot with any questions or concerns at: eliot.lauren@gmail.com
 
 ## License 💵 💴 💶 💷

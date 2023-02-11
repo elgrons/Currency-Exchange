@@ -12,8 +12,11 @@ function cashChange(target_code, amount) {
     const response = JSON.parse(this.responseText);
     if (this.status === 200) {
       printElements(response);
-    } else if (this.status === 404) {
-      printError();
+    } else if (amount === 0.00) {
+      printError(response);
+    }
+    else if (this.status === !200) {
+      printError(response);
     }
   });
   request.open("GET", url, true);
@@ -27,7 +30,7 @@ function printElements(response) {
 }
 
 function printError(response) {
-  document.querySelector('#showCashConversion').innerText = `There was an error processing your exchange rate. ${response.result}`;
+  document.querySelector('#showError').innerText = `There was an error processing your exchange rate. Please enter numbers other than zero in the supported currently only. ${response.result} ${response["error-type"]}`;
 }
 
 function handleFormSubmission(event) {

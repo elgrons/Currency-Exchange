@@ -12,7 +12,6 @@ function cashChange(target_code, amount) {
         printElements(response);
       } else {
         printError(response);
-        console.log(printError);
       }
     });
 }
@@ -25,7 +24,7 @@ function printElements(response) {
 }
 
 function printError(response) {
-  document.querySelector('#showError').innerText = `${response} ${response["error-type"]} ERROR: Please enter numbers other than zero in the supported currency types.`;
+  document.querySelector('#showError').innerText = `${response} ${response.result} ${response["error-type"]} ERROR: Please enter numbers other than zero in the supported currency types.`;
 }
 
 function handleFormSubmission(event) {

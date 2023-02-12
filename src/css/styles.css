@@ -1,13 +1,24 @@
 body {
-  background-color: greenyellow;
+  color: greenyellow;
   text-align: center;
   font-family:'Franklin Gothic Medium';
   font-variant:small-caps;
-  margin: 5%;
+  text-shadow: 5px 5px 0px darkred;
+  margin: auto;
+  background-image: url("https://storage.needpix.com/rsynced_images/pile-of-coins.jpg");
+  max-width: 600px;
+  padding: 30px;
 }
 
 .hidden {
   display: none;
+}
+
+input {
+  width: auto;
+  font-family:'Franklin Gothic Medium';
+  background-color: rgb(118, 134, 93);
+  color: greenyellow;
 }
 
 img {
@@ -17,27 +28,18 @@ img {
   border-color: darkgreen;
   border-style: groove;
   box-shadow: 25px 30px salmon;
+  filter: invert(1) hue-rotate(300deg);
 }
 
 .money-button {
   font-family:'Franklin Gothic Medium';
   font-variant:small-caps;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.showError {
-  font-size: 45px;
-  color: red;
-}
-
-.custom-select {
-  position: relative;
-  font-family: 'Franklin Gothic Medium';
-}
-
-.custom-select select {
-  display: none;
-}
-
-.select-selected {
-  background-color: rgb(112, 162, 31);
+button:hover {
+  background-color: greenyellow;;
 }

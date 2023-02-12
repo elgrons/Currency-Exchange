@@ -28,3 +28,16 @@ img {
   font-size: 45px;
   color: red;
 }
+
+.custom-select {
+  position: relative;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: rgb(112, 162, 31);
+}

@@ -1,6 +1,6 @@
 # 💰 Currency Exchanger 💰
 
-#### A currency exchange application made for my Week 6 Independent Project at Epicodus Coding School focusing on API calls.
+#### A currency exchange application made focusing on API calls.
 
 #### By Eliot Gronstal 2.10.23 💵 💴 💶 💷
 

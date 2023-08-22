@@ -23,8 +23,8 @@ function printElements(response) {
   document.querySelector('#showError').innerText = null;
 }
 
-function printError(response) {
-  document.querySelector('#showError').innerText = `${response} ERROR: Please enter numbers other than zero in the supported currency types.`;
+function printError() {
+  document.querySelector('#showError').innerText = `ERROR: Please enter numbers other than zero in the supported currency types.`;
 }
 
 function handleFormSubmission(event) {

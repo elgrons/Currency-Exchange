@@ -4,20 +4,22 @@
 
 #### By Eliot Gronstal 2.10.23 💵 💴 💶 💷
 
+![Currency Exchange](CurrencyExchange.png)
+
 ## 💰 Technologies Used 💰
 
-* 💸 Javascript
+* 💸 JavaScript
 * 💸 HTML
 * 💸 CSS
 * 💸 Webpack
 * 💸 Lint
 * 💸 Node
-* 💸 Github
+* 💸 Git/GitHub
 
 
 ## 💰 Description 💰
 
-A currency exchange application made for my Week 6 Independent Project at Epicodus Coding School focusing on API calls. 
+A currency exchange application made focusing on API calls. 
 
 A user can type in an amount (in U.S. dollars) and then choose from 5 other types of currency for it to be converted to. To determine the most recent exchange rate, the application will make an API call.
 
@@ -42,7 +44,7 @@ If the API call results in an error (any message not a 200 OK), the application 
 
 * 💸 Error message shows without specific error code.
 
-* 💸 Please reach out to Eliot with any questions or concerns at: eliot.lauren@gmail.com
+* 💸 Please reach out with any questions or concerns at: [eliot.lauren@gmail.com](eliot.lauren@gmail.com)
 
 ## License 💵 💴 💶 💷
 

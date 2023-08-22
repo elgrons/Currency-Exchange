@@ -1,13 +1,22 @@
 body {
-  color: greenyellow;
+  color: #222222;
   text-align: center;
   font-family:'Franklin Gothic Medium';
+  font-size: 2rem;
   font-variant:small-caps;
-  text-shadow: 5px 5px 0px darkred;
   margin: auto;
+  background-color: #9E9E9E;
   background-image: url("https://storage.needpix.com/rsynced_images/pile-of-coins.jpg");
-  max-width: 600px;
-  padding: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  max-width: 800px;
+  padding: 5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto; 
 }
 
 .hidden {
@@ -17,17 +26,15 @@ body {
 input {
   width: auto;
   font-family:'Franklin Gothic Medium';
-  background-color: rgb(118, 134, 93);
-  color: greenyellow;
+  color: #05400A;
 }
 
 img {
   width: 88%;
   display: block;
   margin: auto;
-  border-color: darkgreen;
+  /* border-color: #0E5814; */
   border-style: groove;
-  box-shadow: 25px 30px salmon;
   filter: invert(1) hue-rotate(300deg);
 }
 
@@ -41,5 +48,13 @@ img {
 }
 
 button:hover {
-  background-color: greenyellow;;
+  background-color: #05400A;;
+}
+
+#container {
+  background-color: #B1B1B1;
+  background-position: center center;
+  max-width: 800px;
+  padding: 10%;
+  margin: 0 auto;
 }

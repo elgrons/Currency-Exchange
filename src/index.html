@@ -3,12 +3,13 @@
   <title>💰Currency Exchanger💰</title>
 </head>
 <body>
-  <h1>💰Currency Exchanger💰</h1>
+  <div id="container">
+  <h1>Currency Exchanger</h1>
 
   <form id="money-exchange-form" class="money-money">
     <label for="number-input">Enter an amount in $USD:</label>
-    <input id="number-input" placeholder="0.00" min="0" value="0" step="0.01"><br>
-    <label for="code-input">Select a Currency to Convert to:</label>
+    <input id="number-input" required placeholder="0.00" min="0" value="0" step="0.01"><br>
+    <label for="code-input">Select a Currency for Conversion:</label>
     <select id="code-input">
       <option value="EUR">Euro</option>
       <option value="CAD">Canadian Dollar</option>
@@ -19,9 +20,9 @@
       <br>
     </select>
     <br><br>
-    <button type="submit" id="money-button">$ Convert Cash $ :</button>
+    <button type="submit" id="money-button">$ Convert Currency $</button>
   </form>
-
+  
   <p id="showCashConversion"></p>
 
   <p id="badMoney" class="hidden">Oh no! This type of currency isn't supported. Please choose a different type of currency.</p>
@@ -29,5 +30,6 @@
   <div id="showError"></div>
   
   <img src="./assets/images/Money-Euro-USD.jpg" alt="Stack of Different Types of Currencies">
+</div>
 </body>
 </html>
